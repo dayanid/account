@@ -109,7 +109,7 @@ Accounts.updateById = (id, accounts, result) => {
 
   console.log(accounts);
 
-  sql.query("SELECT * FROM accounts WHERE email_id ='"+accounts.email_id+"' AND status !='E';", (err, res) => {
+  sql.query("SELECT * FROM accounts WHERE email_id ='"+accounts.email_id+"' AND status !='E'  AND id !="+id+";", (err, res) => {
 
     if (err) {
       result(err, null);
