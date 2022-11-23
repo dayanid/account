@@ -95,7 +95,7 @@ Company.updateById = (id, Company, result) => {
 
 
 
-  sql.query("SELECT * FROM companies WHERE email_id ='"+Company.email_id+"' AND status !='E';", (err, res) => {
+  sql.query("SELECT * FROM companies WHERE email_id ='"+Company.email_id+"' AND status !='E'  AND id !="+id+";", (err, res) => {
 
     if (err) {
       result(err, null);
